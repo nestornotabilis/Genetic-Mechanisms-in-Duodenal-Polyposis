@@ -8,7 +8,7 @@ REFERENCE=$3	### PATH TO FASTA REFERENCE
 samtools mpileup -ABd100000 -f $REFERENCE $NORMAL_BAM > normal.mpileup
 samtools mpileup -ABd100000 -f $REFERENCE $TUMOUR_BAM > tumour.mpileup
 
-# (ii) Run script
+# (ii) Run script
 simpleSnpCaller.pl -i normal.mpileup -s normal -m 2 > normal.vcf 
 simpleSnpCaller.pl -i tumour.mpileup -s tumour -m 2 > tumour.vcf 
 

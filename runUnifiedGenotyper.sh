@@ -1,7 +1,7 @@
 #!/bin/sh 
 
 NORMAL_BAM=$1		### PATH TO NORMAL BAM FILE
-TUMOUR=BAM=$2		### PATH TO TUMOUR BAM FILe
+TUMOUR_BAM=$2		### PATH TO TUMOUR BAM FILe
 REFERENCE=$3 		### PATH TO FASTA REFERENCE
 TARGET_REGIONS=$4	### PATH TO BED FILE ###
 DBSNP=$5		### PATH TO DBSNP VCF FILE]
@@ -12,8 +12,8 @@ PATH_TO_GATK=$6		### PATH TO GATK DISTRIBUTION
 java -Xmx40g -jar $PATH_TO_GATK/GenomeAnalysisTK.jar \
         -R $REFERENCE \
         -T UnifiedGenotyper \
-        -I $NORMAL \
-        -I $TUMOUR \
+        -I $NORMAL_BAM \
+        -I $TUMOUR_BAM \
         --dbsnp $DBSNP \
         -o prefiltered.out.vcf \
         -glm SNP \

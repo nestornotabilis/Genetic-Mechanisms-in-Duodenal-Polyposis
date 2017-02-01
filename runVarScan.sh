@@ -1,8 +1,9 @@
 #!/bin/sh
 
-NORMAL_BAM=$1	### PATH TO NORMAL BAM FILE
-TUMOUR_BAM=$2	### PATH TO TUMOUR BAM FILE
-REFERENCE=$3	### PATH TO FASTA REFERENCE
+NORMAL_BAM=$1		### PATH TO NORMAL BAM FILE
+TUMOUR_BAM=$2		### PATH TO TUMOUR BAM FILE
+REFERENCE=$3		### PATH TO FASTA REFERENCE
+PATH_TO_VARSCAN=$4	### PATH TO VARSCAN JAR FILE
 
 # (i) Create pileups
 samtools view -b -u -q 15 $NORMAL_BAM | \
@@ -14,9 +15,9 @@ samtools view -b -u -q 15 $TUMOUR_BAM | \
 	tumour.mpileup
 
 # (ii) Run VarScan
-java -Xmx20g -jar VarScan.jar somatic \
+java -Xmx20g -jar $PATH_TO_VARSCAN/VarScan.jar somatic \
 	normal.mpileup \
 	tumour.mpileup out \
-	—output-vcf 1 \
-	—strand-filter 1
+	--output-vcf 1 \
+	--strand-filter 1
 
