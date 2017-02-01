@@ -111,6 +111,7 @@ Where input parameters are:
 * Path to human reference hg19 in fasta format.
 
 **References for third party tools used**
+
 *IGVTools*
 * James T. Robinson, Helga Thorvaldsdóttir, Wendy Winckler, Mitchell Guttman, Eric S. Lander, Gad Getz, Jill P. Mesirov. Integrative Genomics Viewer. Nature Biotechnology 29, 24–26 (2011) [Article] (http://www.nature.com/nbt/journal/v29/n1/abs/nbt.1754.html)
 * Helga Thorvaldsdóttir, James T. Robinson, Jill P. Mesirov. Integrative Genomics Viewer (IGV): high-performance genomics data visualization and exploration.  Briefings in Bioinformatics 14, 178-192 (2013). [Article](https://academic.oup.com/bib/article-lookup/doi/10.1093/bib/bbs017)
